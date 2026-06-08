@@ -1,0 +1,150 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #AEE2FF;
+}
+
+.page {
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    overflow-x: hidden;
+}
+[data-barba="container"] {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  will-change: transform;
+  transform-origin: center center;
+}
+
+[data-barba="wrapper"] {
+  position: relative;
+  overflow: hidden;
+}
+
+[data-barba-namespace="home"] {
+    background-image: url("https://i.pinimg.com/1200x/87/91/b7/8791b7fd5969dfebe2daeedcf8210ba9.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+[data-barba-namespace="about"] {
+    background-image: url("https://i.pinimg.com/1200x/3f/c5/d7/3fc5d75bc319fc66da5596c565287e76.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+[data-barba-namespace="contact"] {
+    background-image: url("https://i.pinimg.com/736x/39/c4/8f/39c48fabe18a667920d1a420e53b37ed.jpg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+nav {
+    position: fixed;
+    inset: 0;
+    z-index: 999;
+    width: 100%;
+    height: 10vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1vw;
+}
+
+#nav-left {
+    cursor: pointer;
+    font-size: 1.5vw;
+    font-family: fantasy;
+    font-family: Arial, Helvetica, sans-serif;
+    text-transform: capitalize;
+    color: white;
+}
+
+#nav-right {
+    width: 20vw;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#nav-right a {
+    text-decoration: none;
+    color: white;
+    font-size: 1.5vw;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h2 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 13vw;
+    font-family: Arial, Helvetica, sans-serif;
+    white-space: nowrap;
+    color: white;
+    text-transform: uppercase;
+    letter-spacing: -0.06em;
+}
+
+#gooey-wrapper{
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    width: 100%;
+    height: 100vh; 
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    pointer-events: none;
+    overflow: hidden;
+}
+#gooey-upper,
+#gooey-bottom{
+    width: 100%;
+    height: 50vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row;
+}
+.gooey-1,
+.gooey-2{
+    width: 5%;
+    height: 50vh;
+    background: red;
+    will-change: transform;
+}
+.gooey-1,
+.gooey-2{
+    width: 2.5%;
+    height: 50vh;
+    background: red;
+    will-change: transform;
+}
+
+.gooey-1{
+    transform-origin: top;
+}
+
+.gooey-2{
+    transform-origin: bottom;
+}
