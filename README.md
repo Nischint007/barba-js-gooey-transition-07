@@ -1,4 +1,4 @@
-# 🚀 Barba.js Series – 07 Gooey Curtain Transition
+# 🚀 Barba.js Series – 07 Gooey Transition
 
 This project is part of my Beginner → Advanced Barba.js Series, where each project progressively explores more sophisticated page transition techniques inspired by modern creative websites and award-winning digital experiences.
 
