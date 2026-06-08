@@ -1,329 +1,335 @@
-﻿🚀 Barba.js Series – 07 Gooey Curtain Transition
+# 🚀 Barba.js Series – 07 Gooey Curtain Transition
 
 This project is part of my Beginner → Advanced Barba.js Series, where each project progressively explores more sophisticated page transition techniques inspired by modern creative websites and award-winning digital experiences.
 
-👉 In this project, I explore a Gooey Curtain Transition, where dozens of vertical segments emerge from both the top and bottom of the viewport before meeting in the center, creating a fluid curtain-like reveal that transforms ordinary page navigation into an immersive visual experience.
+👉 In this project, I explore a Gooey Curtain Transition, where multiple vertical segments emerge from the top and bottom of the viewport before meeting at the center, creating an organic page transition that feels fluid, immersive, and visually dynamic.
 
-📌 Overview
+---
 
-Instead of using traditional overlays, shutters, or full-screen wipes, this transition introduces a dual-layer gooey system composed of multiple vertical segments that animate independently.
+## 📌 Overview
 
-As users navigate between pages, the upper and lower gooey layers sweep toward the center of the screen, temporarily taking control of the viewport before gracefully retreating to reveal the next page.
+Instead of relying on traditional overlays or shutter systems, this transition introduces a dual-layer gooey curtain effect composed of dozens of independently animated segments.
 
-The randomized movement pattern creates a more organic and less mechanical feel, making every transition appear dynamic and alive.
+As users navigate between pages, the upper and lower gooey layers converge toward the center of the viewport before retreating back outward, revealing the next page through a smooth and organic motion sequence.
 
 💡 This approach:
 
-Creates a unique fluid curtain effect
+* Creates a fluid curtain-like transition effect
+* Adds personality and motion to navigation
+* Produces stronger visual engagement between pages
+* Mimics experimental transition systems found on modern portfolio websites
+* Turns page navigation into a visual experience rather than a utility
 
-Adds organic motion to page navigation
+---
 
-Introduces unpredictability through randomized animation
+## 🆕 What's New in This Project
 
-Produces stronger visual engagement between pages
+✨ Dual-layer gooey curtain animation system
 
-Feels inspired by experimental portfolio and creative studio websites
-
-Turns navigation into a memorable visual moment
-
-🆕 What's New in This Project
-
-✨ Dual-layer gooey curtain system
-
-✨ Organic top-to-bottom reveal animation
+✨ Organic center-converging reveal effect
 
 ✨ Randomized stagger choreography
 
-✨ Fluid viewport coverage effect
+✨ Fluid viewport coverage animation
 
-✨ Enhanced motion personality
+✨ Experimental motion language
 
-✨ Experimental studio-inspired transitions
+✨ Dynamic opening and closing behavior
 
-✨ Dynamic reveal and conceal behavior
+✨ Enhanced visual rhythm between pages
 
-⚙️ How the Transition Works
+---
 
-Upper gooey segments begin descending from above the viewport
+## ⚙️ How the Transition Works
 
-Lower gooey segments simultaneously rise from below
+1. Upper gooey segments descend from above the viewport
+2. Lower gooey segments rise from below the viewport
+3. Both layers converge toward the center
+4. Barba.js swaps the page content in the background
+5. The gooey curtain begins opening
+6. Both layers retreat back outward
+7. The new page is revealed underneath
 
-Both layers converge toward the center
+👉 Creates an organic curtain effect rather than a conventional page transition.
 
-The viewport becomes temporarily covered
+---
 
-Barba.js swaps page content behind the curtain
+## 🔹 Animation Philosophy
 
-The gooey layers retreat back to their original positions
+The goal wasn't simply to hide a page change.
 
-The new page is revealed underneath
+Instead, the transition acts as a living visual layer between experiences.
 
-👉 Creates a fluid curtain effect rather than a conventional page transition.
+The randomized stagger values introduce unpredictability, making the motion feel more natural and less mechanical than traditional transition systems.
 
-🔹 Animation Philosophy
+Rather than interrupting the experience, the transition becomes part of it.
 
-The goal wasn't simply to cover a page change.
+---
 
-Instead, the transition was designed to feel organic and alive.
+## 🔹 GSAP Setup
 
-Unlike rigid geometric transitions, the gooey segments move independently through randomized stagger values, creating a more natural and less predictable rhythm.
-
-The result feels closer to a living system than a traditional interface animation.
-
-Rather than hiding navigation, the transition celebrates it.
-
-🔹 GSAP Setup
-
+```js
 const gooey1 = document.querySelectorAll(".gooey-1");
 const gooey2 = document.querySelectorAll(".gooey-2");
 
 gsap.set(gooey1,{
-yPercent: -100
+    yPercent: -100
 });
 
 gsap.set(gooey2,{
-yPercent: 100
+    yPercent: 100
 });
+```
 
-📍 Upper segments begin hidden above the viewport
+📍 Upper segments start hidden above the viewport
 
-📍 Lower segments begin hidden below the viewport
+📍 Lower segments start hidden below the viewport
 
 📍 Prepared for center-converging reveal animation
 
-📍 Optimized for transform-based performance
+📍 Optimized for smooth transform-based motion
 
-🔹 Animation Functions
+---
 
-▶️ Gooey Entry (Page Exit)
+## 🔹 Animation Functions
 
+### ▶️ Gooey Entry (Page Exit)
+
+```js
 function gooeyEntry(){
 
-```
-const tl = gsap.timeline();
+    const tl = gsap.timeline();
 
-tl.to(gooey1,{
-    yPercent: 0,
-    duration: 1.2,
-    ease: "power3.inOut",
-    stagger:{
-        amount: 0.6,
-        from: "random"
-    }
-},0);
+    tl.to(gooey1,{
+        yPercent: 0,
+        duration: 1.2,
+        ease: "power3.inOut",
+        stagger:{
+            amount: 0.6,
+            from: "random"
+        }
+    },0);
 
-tl.to(gooey2,{
-    yPercent: 0,
-    duration: 1.2,
-    ease: "power4.inOut",
-    stagger:{
-        amount: 0.6,
-        from: "random"
-    }
-},0);
+    tl.to(gooey2,{
+        yPercent: 0,
+        duration: 1.2,
+        ease: "power4.inOut",
+        stagger:{
+            amount: 0.6,
+            from: "random"
+        }
+    },0);
 
-return tl;
-```
-
+    return tl;
 }
+```
 
-✔️ Upper and lower segments converge simultaneously
+✔️ Gooey layers progressively cover the viewport
 
-✔️ Creates an organic curtain-closing effect
+✔️ Creates anticipation before navigation
 
-✔️ Introduces natural motion variation through random staggering
+✔️ Adds organic rhythm through randomized motion
 
-✔️ Covers the viewport in a visually engaging way
+---
 
-▶️ Gooey Exit (Page Enter)
+### ▶️ Gooey Exit (Page Enter)
 
+```js
 function gooeyExit(){
 
-```
-const tl = gsap.timeline();
+    const tl = gsap.timeline();
 
-tl.to(gooey1,{
-    yPercent: -100,
-    duration: 1.1,
-    ease: "power3.inOut",
-    stagger:{
-        amount: 0.6,
-        from: "random"
-    }
-},0);
+    tl.to(gooey1,{
+        yPercent: -100,
+        delay: 0.5,
+        duration: 1.1,
+        ease: "power3.inOut",
+        stagger:{
+            amount: 0.6,
+            from: "random"
+        }
+    },0);
 
-tl.to(gooey2,{
-    yPercent: 100,
-    duration: 1.1,
-    ease: "power4.inOut",
-    stagger:{
-        amount: 0.6,
-        from: "random"
-    }
-},0);
+    tl.to(gooey2,{
+        yPercent: 100,
+        delay: 0.35,
+        duration: 1.1,
+        ease: "power4.inOut",
+        stagger:{
+            amount: 0.6,
+            from: "random"
+        }
+    },0);
 
-return tl;
-```
-
+    return tl;
 }
+```
 
-✔️ Reopens the viewport organically
+✔️ Reveals the incoming page smoothly
 
 ✔️ Maintains motion continuity
 
-✔️ Preserves the fluid aesthetic
+✔️ Creates a fluid organic finish
 
-✔️ Creates a polished transition finish
+---
 
-🔹 Barba.js Integration
+## 🔹 Barba.js Integration
 
+```js
 barba.init({
 
-```
-transitions: [{
+    transitions: [{
 
-    name: "gooey-reveal",
+        name: "gooey-reveal",
 
-    async leave(data){
-        await gooeyEntry();
-    },
+        async leave(data){
+            await gooeyEntry();
+        },
 
-    async enter(){
-        await gooeyExit();
-    }
-}]
-```
-
+        async enter(){
+            await gooeyExit();
+        }
+    }]
 });
+```
 
-🧠 Transition Flow
+### 🧠 Transition Flow
 
-▶️ Leave Phase (Current Page Exit)
+### ▶️ Leave Phase (Current Page Exit)
 
-When a navigation link is clicked, the gooey curtain begins forming.
+During navigation, both gooey layers animate simultaneously.
 
-Upper segments descend from above while lower segments rise from below.
+The upper layer:
 
-Both layers animate simultaneously until they meet near the center of the screen.
+* Descends from above the viewport
 
+The lower layer:
+
+* Rises from below the viewport
+
+Together they converge toward the center of the screen.
+
+```js
 await gooeyEntry();
+```
 
-✔️ Creates anticipation before the page swap
+✔️ Creates anticipation before the transition
 
-✔️ Produces a fluid full-screen coverage effect
+✔️ Makes navigation feel intentional
 
-✔️ Makes the transition feel intentional and immersive
+✔️ Avoids abrupt content changes
 
-▶️ Enter Phase (Next Page Reveal)
+---
 
-Once the new page has been loaded by Barba.js, the curtain begins opening.
+### ▶️ Enter Phase (Next Page Reveal)
 
-The upper and lower segments retreat back toward their original positions while the newly loaded content remains underneath.
+Once the next page is loaded, the gooey curtain begins opening.
 
+Both layers retreat back toward their original positions while revealing the newly loaded page underneath.
+
+```js
 await gooeyExit();
+```
 
-✔️ Creates a smooth reveal experience
+✔️ Creates a smooth organic reveal
 
 ✔️ Maintains visual continuity
 
-✔️ Avoids abrupt page changes
+✔️ Enhances perceived smoothness
 
-📍 Complete Sequence
+---
 
-User clicks a navigation link
+### 📍 Complete Sequence
 
-Upper gooey segments descend
+1. User clicks a navigation link
+2. Upper gooey segments descend from above
+3. Lower gooey segments rise from below
+4. Both layers meet near the center
+5. Barba.js swaps the page content
+6. Gooey layers retreat outward
+7. The new page is revealed underneath
 
-Lower gooey segments rise
+👉 The final result feels less like navigation and more like an organic curtain transition.
 
-Both layers meet near the center
+---
 
-The viewport becomes fully covered
+## 🧱 HTML Structure
 
-Barba.js swaps page content
-
-The gooey curtain begins opening
-
-The new page is revealed underneath
-
-👉 The final result feels more like an organic curtain reveal than a traditional website transition.
-
-🧱 HTML Structure
-
+```html
 <div id="gooey-wrapper">
 
+    <div id="gooey-upper">
+        <div class="gooey-1"></div>
+        ...
+    </div>
+
+    <div id="gooey-bottom">
+        <div class="gooey-2"></div>
+        ...
+    </div>
+
+</div>
 ```
-<div id="gooey-upper">
-    <div class="gooey-1"></div>
-    ...
-</div>
 
-<div id="gooey-bottom">
-    <div class="gooey-2"></div>
-    ...
-</div>
-```
+---
 
-</div>
+## 🎨 CSS Structure
 
-🎨 CSS Structure
-
+```css
 #gooey-wrapper{
-position: fixed;
-inset: 0;
-z-index: 9999;
-overflow: hidden;
-}
-
-#gooey-upper,
-#gooey-bottom{
-width: 100%;
-height: 50vh;
-display: flex;
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    width: 100%;
+    height: 100vh;
+    pointer-events: none;
+    overflow: hidden;
 }
 
 .gooey-1,
 .gooey-2{
-width: 2.5%;
-height: 50vh;
-background: red;
-will-change: transform;
+    width: 2.5%;
+    height: 50vh;
+    background: red;
+    will-change: transform;
 }
+
+.gooey-1{
+    transform-origin: top;
+}
+
+.gooey-2{
+    transform-origin: bottom;
+}
+```
 
 📍 Ensures:
 
-Full-screen viewport coverage
+* Full-screen viewport coverage
+* Smooth animation performance
+* Reliable layer management
+* Scalable architecture
+* Production-ready transition behavior
 
-Independent segment animation
+---
 
-Smooth transform-based rendering
+## 🧠 Key Takeaways
 
-Reliable GPU acceleration
+* Randomized staggering creates more natural motion
+* Organic transitions feel less mechanical and repetitive
+* Independent segments create richer visual complexity
+* GSAP timelines provide precise animation orchestration
+* Barba.js enables seamless navigation between pages
+* Small motion details significantly improve perceived quality
+* Transition systems can become part of the storytelling experience
 
-Scalable architecture for larger segment counts
+---
 
-Production-ready transition behavior
+## ✍️ Author
 
-🧠 Key Takeaways
+### Nischint Singh
 
-Randomized stagger patterns create more organic motion
+🔗 LinkedIn:
+https://www.linkedin.com/in/nischint-singh-98a329314/
 
-Independent segments produce richer visual complexity
-
-Transform-based animations improve performance
-
-Barba.js simplifies seamless page transitions
-
-Layered motion systems create stronger visual impact
-
-Experimental transitions can become part of a website's identity
-
-Small animation details dramatically enhance perceived quality
-
-Organic motion often feels more engaging than rigid geometric movement
-
-✍️ Author
-
-Nischint Singh
-
-🔗 LinkedIn: https://www.linkedin.com/in/nischint-singh-98a329314/
+---
