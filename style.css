@@ -128,17 +128,13 @@ h2 {
 }
 .gooey-1,
 .gooey-2{
-    width: 5%;
+    width: calc(2.5% + 2.5px);
+    margin-left: -1px;
     height: 50vh;
     background: red;
     will-change: transform;
-}
-.gooey-1,
-.gooey-2{
-    width: 2.5%;
-    height: 50vh;
-    background: red;
-    will-change: transform;
+    transform: translateZ(0);
+    backface-visibility: hidden;
 }
 
 .gooey-1{
